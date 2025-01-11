@@ -1,0 +1,170 @@
+[
+    {
+        "title": "Quantum mechanics",
+        "url": "https://en.wikipedia.org/wiki/Quantum_mechanics",
+        "token_count": 3934,
+        "unique_token_count": 1322
+    },
+    {
+        "title": "Artificial intelligence",
+        "url": "https://en.wikipedia.org/wiki/Artificial_intelligence",
+        "token_count": 7471,
+        "unique_token_count": 2727
+    },
+    {
+        "title": "Space exploration",
+        "url": "https://en.wikipedia.org/wiki/Space_exploration",
+        "token_count": 3855,
+        "unique_token_count": 1462
+    },
+    {
+        "title": "Computer network",
+        "url": "https://en.wikipedia.org/wiki/Computer_network",
+        "token_count": 3764,
+        "unique_token_count": 1288
+    },
+    {
+        "title": "French Revolution",
+        "url": "https://en.wikipedia.org/wiki/French_Revolution",
+        "token_count": 7188,
+        "unique_token_count": 2585
+    },
+    {
+        "title": "World War II",
+        "url": "https://en.wikipedia.org/wiki/World_War_II",
+        "token_count": 7814,
+        "unique_token_count": 2368
+    },
+    {
+        "title": "Ancient Greece",
+        "url": "https://en.wikipedia.org/wiki/Ancient_Greece",
+        "token_count": 4157,
+        "unique_token_count": 1691
+    },
+    {
+        "title": "Renaissance",
+        "url": "https://en.wikipedia.org/wiki/Renaissance",
+        "token_count": 5776,
+        "unique_token_count": 2377
+    },
+    {
+        "title": "Wonders of the World",
+        "url": "https://en.wikipedia.org/wiki/Seven_Wonders_of_the_World",
+        "token_count": 438,
+        "unique_token_count": 265
+    },
+    {
+        "title": "Great Barrier Reef",
+        "url": "https://en.wikipedia.org/wiki/Great_Barrier_Reef",
+        "token_count": 4053,
+        "unique_token_count": 1518
+    },
+    {
+        "title": "Amazon rainforest",
+        "url": "https://en.wikipedia.org/wiki/Amazon_rainforest",
+        "token_count": 2807,
+        "unique_token_count": 1303
+    },
+    {
+        "title": "Sahara",
+        "url": "https://en.wikipedia.org/wiki/Sahara",
+        "token_count": 4390,
+        "unique_token_count": 1802
+    },
+    {
+        "title": "Classical music",
+        "url": "https://en.wikipedia.org/wiki/Classical_music",
+        "token_count": 4070,
+        "unique_token_count": 1717
+    },
+    {
+        "title": "Impressionism",
+        "url": "https://en.wikipedia.org/wiki/Impressionism",
+        "token_count": 2735,
+        "unique_token_count": 1346
+    },
+    {
+        "title": "Film",
+        "url": "https://en.wikipedia.org/wiki/Film",
+        "token_count": 4619,
+        "unique_token_count": 1820
+    },
+    {
+        "title": "Homer",
+        "url": "https://en.wikipedia.org/wiki/Homer",
+        "token_count": 1955,
+        "unique_token_count": 973
+    },
+    {
+        "title": "Evolution",
+        "url": "https://en.wikipedia.org/wiki/Evolution",
+        "token_count": 5814,
+        "unique_token_count": 1927
+    },
+    {
+        "title": "Human anatomy",
+        "url": "https://en.wikipedia.org/wiki/Human_anatomy",
+        "token_count": 372,
+        "unique_token_count": 222
+    },
+    {
+        "title": "Climate",
+        "url": "https://en.wikipedia.org/wiki/Climate",
+        "token_count": 1239,
+        "unique_token_count": 597
+    },
+    {
+        "title": "Biodiversity",
+        "url": "https://en.wikipedia.org/wiki/Biodiversity",
+        "token_count": 3732,
+        "unique_token_count": 1520
+    },
+    {
+        "title": "Sustainable development",
+        "url": "https://en.wikipedia.org/wiki/Sustainable_development",
+        "token_count": 2126,
+        "unique_token_count": 954
+    },
+    {
+        "title": "Globalization",
+        "url": "https://en.wikipedia.org/wiki/Globalization",
+        "token_count": 7024,
+        "unique_token_count": 2550
+    },
+    {
+        "title": "Blockchain",
+        "url": "https://en.wikipedia.org/wiki/Blockchain",
+        "token_count": 3552,
+        "unique_token_count": 1494
+    },
+    {
+        "title": "2007–2008 financial crisis",
+        "url": "https://en.wikipedia.org/wiki/Financial_crisis_of_2007–2008",
+        "token_count": 6572,
+        "unique_token_count": 2166
+    },
+    {
+        "title": "Vaccine",
+        "url": "https://en.wikipedia.org/wiki/Vaccine",
+        "token_count": 4099,
+        "unique_token_count": 1636
+    },
+    {
+        "title": "Mental health",
+        "url": "https://en.wikipedia.org/wiki/Mental_health",
+        "token_count": 4585,
+        "unique_token_count": 1745
+    },
+    {
+        "title": "Nutrition",
+        "url": "https://en.wikipedia.org/wiki/Nutrition",
+        "token_count": 1655,
+        "unique_token_count": 733
+    },
+    {
+        "title": "Pandemic",
+        "url": "https://en.wikipedia.org/wiki/Pandemic",
+        "token_count": 2125,
+        "unique_token_count": 1014
+    }
+]
