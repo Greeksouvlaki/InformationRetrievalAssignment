@@ -4,10 +4,36 @@ import json
 
 # Λίστα URLs για συλλογή άρθρων από Wikipedia
 wikipedia_urls = [
-    "https://en.wikipedia.org/wiki/Web_scraping",
-    "https://en.wikipedia.org/wiki/Data_mining",
-    "https://en.wikipedia.org/wiki/Natural_language_processing"
+    "https://en.wikipedia.org/wiki/Quantum_mechanics",
+    "https://en.wikipedia.org/wiki/Artificial_intelligence",
+    "https://en.wikipedia.org/wiki/Space_exploration",
+    "https://en.wikipedia.org/wiki/Computer_network",
+    "https://en.wikipedia.org/wiki/French_Revolution",
+    "https://en.wikipedia.org/wiki/World_War_II",
+    "https://en.wikipedia.org/wiki/Ancient_Greece",
+    "https://en.wikipedia.org/wiki/Renaissance",
+    "https://en.wikipedia.org/wiki/Seven_Wonders_of_the_World",
+    "https://en.wikipedia.org/wiki/Great_Barrier_Reef",
+    "https://en.wikipedia.org/wiki/Amazon_rainforest",
+    "https://en.wikipedia.org/wiki/Sahara",
+    "https://en.wikipedia.org/wiki/Classical_music",
+    "https://en.wikipedia.org/wiki/Impressionism",
+    "https://en.wikipedia.org/wiki/Film",
+    "https://en.wikipedia.org/wiki/Homer",
+    "https://en.wikipedia.org/wiki/Evolution",
+    "https://en.wikipedia.org/wiki/Human_anatomy",
+    "https://en.wikipedia.org/wiki/Climate",
+    "https://en.wikipedia.org/wiki/Biodiversity",
+    "https://en.wikipedia.org/wiki/Sustainable_development",
+    "https://en.wikipedia.org/wiki/Globalization",
+    "https://en.wikipedia.org/wiki/Blockchain",
+    "https://en.wikipedia.org/wiki/Financial_crisis_of_2007–2008",
+    "https://en.wikipedia.org/wiki/Vaccine",
+    "https://en.wikipedia.org/wiki/Mental_health",
+    "https://en.wikipedia.org/wiki/Nutrition",
+    "https://en.wikipedia.org/wiki/Pandemic"
 ]
+
 
 # Συνάρτηση για συλλογή δεδομένων από άρθρο Wikipedia
 def fetch_wikipedia_article(url):
