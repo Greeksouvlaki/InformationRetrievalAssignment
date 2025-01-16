@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
+from PIL import Image, ImageTk
 from search_interface import boolean_search, vsm_search, bm25_search, compute_tfidf, load_data
 
 # Φόρτωση δεδομένων
@@ -19,7 +20,7 @@ def perform_search(query, retrieval_method, operation=None):
 
     if retrieval_method == "Boolean":
         if operation not in {"AND", "OR", "NOT"}:
-            messagebox.showerror("Error", "Invalid Boolean operation. Choose AND, OR, or NOT.")
+            messagebox.showerror("Error", "Invalid Boolean operation. Choose AND, OR, NOT.")
             return
         results = boolean_search(query, inverted_index, operation)
     elif retrieval_method == "VSM":
@@ -32,19 +33,11 @@ def perform_search(query, retrieval_method, operation=None):
         messagebox.showerror("Error", "Invalid retrieval method selected.")
         return
 
-    display_results(results, retrieval_method)
+    display_results(results)
 
-# Εμφάνιση αποτελεσμάτων
-def display_results(results, method):
-    results_window = tk.Toplevel(root)
-    results_window.title(f"Results - {method}")
-    results_window.configure(bg=BG_COLOR)
-
-    tk.Label(results_window, text=f"Results for {method} Retrieval", bg=BG_COLOR, fg=SECONDARY_COLOR,
-             font=("Helvetica", 16, "bold")).pack(pady=10)
-
-    result_list = tk.Listbox(results_window, bg=BG_COLOR, fg=SECONDARY_COLOR, font=("Helvetica", 12), width=80)
-    result_list.pack(padx=20, pady=10, fill=tk.BOTH, expand=True)
+# Εμφάνιση αποτελεσμάτων στο ίδιο παράθυρο
+def display_results(results):
+    result_list.delete(0, tk.END)  # Καθαρισμός προηγούμενων αποτελεσμάτων
 
     if isinstance(results, set):  # Boolean results
         for doc_id in results:
@@ -53,56 +46,72 @@ def display_results(results, method):
         for doc_id, score in results[:10]:  # Show top 10 results
             result_list.insert(tk.END, f"{processed_articles[doc_id]['title']} (Score: {score:.4f})")
 
-    tk.Button(results_window, text="Close", bg=PRIMARY_COLOR, fg=SECONDARY_COLOR, font=("Helvetica", 12, "bold"),
-              command=results_window.destroy).pack(pady=10)
-
 # Δημιουργία κύριου παραθύρου
 root = tk.Tk()
 root.title("Marvel Search Engine")
-root.geometry("800x600")
+root.geometry("800x700")
 root.configure(bg=BG_COLOR)
 
-# Επικεφαλίδα
-header = tk.Label(root, text="Marvel Search Engine", bg=PRIMARY_COLOR, fg=SECONDARY_COLOR,
-                   font=("Helvetica", 24, "bold"), pady=10)
-header.pack(fill=tk.X)
+# Στυλ για μοντέρνα widgets
+style = ttk.Style()
+style.configure("TButton", background=PRIMARY_COLOR, foreground=SECONDARY_COLOR, font=("Helvetica", 12, "bold"))
+style.configure("TLabel", background=BG_COLOR, foreground=SECONDARY_COLOR, font=("Helvetica", 14))
+style.configure("TCombobox", background=PRIMARY_COLOR, foreground=SECONDARY_COLOR, font=("Helvetica", 12))
+
+# Επικεφαλίδα με λογότυπο
+header_frame = tk.Frame(root, bg=BG_COLOR)
+header_frame.pack(fill=tk.X, pady=10)
+
+# Προσθήκη λογότυπου
+logo_image = Image.open("marvel_logo.png")  # Το λογότυπο πρέπει να υπάρχει στο φάκελο
+logo_image = logo_image.resize((200, 50), Image.Resampling.LANCZOS)
+logo_photo = ImageTk.PhotoImage(logo_image)
+logo_label = tk.Label(header_frame, image=logo_photo, bg=BG_COLOR)
+logo_label.pack(side=tk.LEFT, padx=10)
+
+header_label = tk.Label(header_frame, text="Marvel Search Engine", bg=BG_COLOR, fg=SECONDARY_COLOR,
+                        font=("Helvetica", 24, "bold"))
+header_label.pack(side=tk.LEFT)
 
 # Πεδίο εισαγωγής ερωτήματος
-query_label = tk.Label(root, text="Enter your search query:", bg=BG_COLOR, fg=SECONDARY_COLOR,
-                        font=("Helvetica", 14))
+query_label = ttk.Label(root, text="Enter your search query:")
 query_label.pack(pady=10)
 
 query_entry = tk.Entry(root, font=("Helvetica", 14), width=50)
 query_entry.pack(pady=5)
 
 # Επιλογές μεθόδου ανάκτησης
-method_label = tk.Label(root, text="Choose retrieval method:", bg=BG_COLOR, fg=SECONDARY_COLOR,
-                         font=("Helvetica", 14))
+method_label = ttk.Label(root, text="Choose retrieval method:")
 method_label.pack(pady=10)
 
 method_var = tk.StringVar(value="Boolean")
 methods = ["Boolean", "VSM", "BM25", "TF-IDF"]
-method_menu = ttk.Combobox(root, textvariable=method_var, values=methods, state="readonly", font=("Helvetica", 12))
+method_menu = ttk.Combobox(root, textvariable=method_var, values=methods, state="readonly")
 method_menu.pack(pady=5)
 
 # Επιλογή Boolean λειτουργίας
-boolean_label = tk.Label(root, text="Boolean Operation (for Boolean Retrieval):", bg=BG_COLOR, fg=SECONDARY_COLOR,
-                          font=("Helvetica", 14))
+boolean_label = ttk.Label(root, text="Boolean Operation (for Boolean Retrieval):")
 boolean_label.pack(pady=10)
 
 boolean_var = tk.StringVar(value="AND")
-boolean_menu = ttk.Combobox(root, textvariable=boolean_var, values=["AND", "OR", "NOT"], state="readonly",
-                             font=("Helvetica", 12))
+boolean_menu = ttk.Combobox(root, textvariable=boolean_var, values=["AND", "OR", "NOT"], state="readonly")
 boolean_menu.pack(pady=5)
 
 # Κουμπί αναζήτησης
-search_button = tk.Button(root, text="Search", bg=PRIMARY_COLOR, fg=SECONDARY_COLOR, font=("Helvetica", 14, "bold"),
+search_button = ttk.Button(root, text="Search",
                            command=lambda: perform_search(query_entry.get(), method_var.get(), boolean_var.get()))
 search_button.pack(pady=20)
 
+# Πεδίο εμφάνισης αποτελεσμάτων
+result_label = ttk.Label(root, text="Results:")
+result_label.pack(pady=10)
+
+result_list = tk.Listbox(root, font=("Helvetica", 12), bg=BG_COLOR, fg=SECONDARY_COLOR, width=80, height=20)
+result_list.pack(pady=10)
+
 # Πληροφορίες
 info_label = tk.Label(root, text="Powered by the Marvel Universe", bg=BG_COLOR, fg=ACCENT_COLOR,
-                       font=("Helvetica", 12, "italic"))
+                      font=("Helvetica", 12, "italic"))
 info_label.pack(side=tk.BOTTOM, pady=10)
 
 # Εκκίνηση της εφαρμογής
