@@ -1,5 +1,5 @@
 import json
-from search_interface import boolean_search, vsm_search, bm25_search, load_data
+from search_interface import boolean_search, vsm_search, bm25_search, compute_tfidf, load_data
 
 # Υπολογισμός Precision, Recall, F1-Score
 def evaluate_metrics(retrieved, relevant):
@@ -87,6 +87,17 @@ for query, relevant_docs in ground_truth.items():
         "Recall": recall,
         "F1-Score": f1,
         "retrieved_docs": retrieved_docs_bm25
+    }
+
+    # TF-IDF Search
+    tfidf_results = compute_tfidf(query, inverted_index, processed_articles)
+    retrieved_docs_tfidf = [doc_id for doc_id, _ in tfidf_results[:10]]  # Top 10 αποτελέσματα
+    precision, recall, f1 = evaluate_metrics(retrieved_docs_tfidf, relevant_docs)
+    results[query]["TF-IDF"] = {
+        "Precision": precision,
+        "Recall": recall,
+        "F1-Score": f1,
+        "retrieved_docs": retrieved_docs_tfidf
     }
 
 # Υπολογισμός MAP

@@ -59,6 +59,15 @@
                     2,
                     0
                 ]
+            },
+            "TF-IDF": {
+                "Precision": 1.0,
+                "Recall": 0.08,
+                "F1-Score": 0.14814814814814814,
+                "retrieved_docs": [
+                    3,
+                    18
+                ]
             }
         },
         "iron man": {
@@ -131,6 +140,18 @@
                     5,
                     12,
                     6
+                ]
+            },
+            "TF-IDF": {
+                "Precision": 1.0,
+                "Recall": 0.16666666666666666,
+                "F1-Score": 0.2857142857142857,
+                "retrieved_docs": [
+                    4,
+                    8,
+                    2,
+                    1,
+                    7
                 ]
             }
         },
@@ -209,6 +230,17 @@
                     1,
                     23
                 ]
+            },
+            "TF-IDF": {
+                "Precision": 1.0,
+                "Recall": 0.0975609756097561,
+                "F1-Score": 0.17777777777777776,
+                "retrieved_docs": [
+                    5,
+                    9,
+                    30,
+                    18
+                ]
             }
         },
         "avengers": {
@@ -251,6 +283,12 @@
                     8,
                     9
                 ]
+            },
+            "TF-IDF": {
+                "Precision": 0,
+                "Recall": 0.0,
+                "F1-Score": 0,
+                "retrieved_docs": []
             }
         },
         "captain america": {
@@ -329,6 +367,19 @@
                     17,
                     3
                 ]
+            },
+            "TF-IDF": {
+                "Precision": 1.0,
+                "Recall": 0.18181818181818182,
+                "F1-Score": 0.3076923076923077,
+                "retrieved_docs": [
+                    6,
+                    10,
+                    14,
+                    35,
+                    22,
+                    1
+                ]
             }
         },
         "black panther": {
@@ -395,6 +446,17 @@
                     26,
                     0
                 ]
+            },
+            "TF-IDF": {
+                "Precision": 1.0,
+                "Recall": 0.17391304347826086,
+                "F1-Score": 0.29629629629629634,
+                "retrieved_docs": [
+                    19,
+                    31,
+                    25,
+                    44
+                ]
             }
         },
         "infinity stones": {
@@ -437,6 +499,15 @@
                     18,
                     25
                 ]
+            },
+            "TF-IDF": {
+                "Precision": 0.5,
+                "Recall": 1.0,
+                "F1-Score": 0.6666666666666666,
+                "retrieved_docs": [
+                    20,
+                    23
+                ]
             }
         },
         "guardians of the galaxy": {
@@ -478,6 +549,15 @@
                     18,
                     9,
                     22
+                ]
+            },
+            "TF-IDF": {
+                "Precision": 1.0,
+                "Recall": 0.6666666666666666,
+                "F1-Score": 0.8,
+                "retrieved_docs": [
+                    11,
+                    33
                 ]
             }
         },
@@ -546,6 +626,15 @@
                     37,
                     12
                 ]
+            },
+            "TF-IDF": {
+                "Precision": 1.0,
+                "Recall": 0.08333333333333333,
+                "F1-Score": 0.15384615384615385,
+                "retrieved_docs": [
+                    36,
+                    5
+                ]
             }
         },
         "multiverse": {
@@ -604,12 +693,22 @@
                     45,
                     32
                 ]
+            },
+            "TF-IDF": {
+                "Precision": 1.0,
+                "Recall": 0.13333333333333333,
+                "F1-Score": 0.23529411764705882,
+                "retrieved_docs": [
+                    29,
+                    37
+                ]
             }
         }
     },
     "map_scores": {
         "Boolean": 0.6447607803145688,
         "VSM": 0.28876677317027266,
-        "BM25": 0.4759803687534335
+        "BM25": 0.4759803687534335,
+        "TF-IDF": 0.25832922009061987
     }
 }
