@@ -122,6 +122,7 @@ def bm25_search(query, documents):
     return sorted(enumerate(scores), key=lambda x: x[1], reverse=True)
 
 # Διεπαφή αναζήτησης
+# Ενημέρωση διεπαφής αναζήτησης
 def search_interface():
     inverted_index, processed_articles = load_data()
     print("Welcome to the Search Engine!")
@@ -137,7 +138,8 @@ def search_interface():
         print("1. Boolean Retrieval (AND, OR, NOT)")
         print("2. Vector Space Model (VSM)")
         print("3. Okapi BM25")
-        choice = input("\nEnter your choice (1/2/3): ").strip()
+        print("4. TF-IDF Retrieval")
+        choice = input("\nEnter your choice (1/2/3/4): ").strip()
 
         if choice == "1":
             print("\nAvailable Boolean operations: AND, OR, NOT")
@@ -150,6 +152,8 @@ def search_interface():
             results = vsm_search(query, inverted_index, processed_articles)
         elif choice == "3":
             results = bm25_search(query, processed_articles)
+        elif choice == "4":
+            results = compute_tfidf(query, inverted_index, processed_articles)
         else:
             print("Invalid choice. Please try again.")
             continue
